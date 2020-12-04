@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -14,7 +16,10 @@
 
 
   <title>CodePen - 2075-5</title>
-
+  
+  
+  
+  
 <style>
 body{
   background: orange;
@@ -27,28 +32,33 @@ body{
 }
 </style>
 
- 
+  
+  
+  
+  
 
 </head>
 
 <body translate="no" >
   <h1>1 Minute Timer</h1>
 <div>Timer: <span id="timer">0</span></div>
+<p id="countdown">Timer Counting Down</p>
   
   
       <script id="rendered-js" >
 console.clear();
 console.log("Hello World");
-let timer = 60;
+let timer =10;
 
 function addOne(){
  timer = timer -1;
+ if (timer < 0) {
+  document.getElementById("countdown").innerHTML = "Timer Done";
+  $("addOne").stop();
+}
  let element = document.getElementById("timer")
  element.innerHTML = timer;
  //console.log(timer);
-  if(timer < 1){
-    
-  }
 }
 
 setInterval(addOne,1000);
